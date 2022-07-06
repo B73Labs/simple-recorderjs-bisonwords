@@ -13,8 +13,9 @@
 <nav class="navbar navbar-expand-lg bg-light">
     <div class="container-fluid">
         <a class="navbar-brand fw-bold" href="#">Bison Sounds</a>
-        <svg height="60" width="82"
+        <svg height="50" width="82"
              xmlns="http://www.w3.org/2000/svg">
+            <!-- https://openclipart.org/detail/244839/bison-silhouette -->
             <image href="Bison-Silhouette.svg" height="60" width="82" transform="scale(-1, 1)"/>
         </svg>
         <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
