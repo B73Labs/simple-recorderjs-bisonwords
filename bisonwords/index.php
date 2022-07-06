@@ -106,12 +106,18 @@
                 <?php
                 include 'words.php';
                 foreach ($words as $word) {
-                    $slug = $words['slug'];
-                    $title = $words['word'];
-                    print <<<HTML
+                    $slug = $word['slug'];
+                    $title = $word['word'];
+                    $pronunciation = $word['pronunciation'] ?? '';
+                    if($pronunciation !== '') {
+                        $pronunciation = "<i>${pronunciation}</i><br>";
+                    };
+                }
+                print <<<HTML
                 <div class="row">
-                <h4>${title}</h4>
+                <h4 class="mb-0">${title}</h4>
                 <div>
+                ${pronunciation}
                 <button class="recordButton btn btn-dark" id="${slug}" style="height:50px; margin-left:20px;">
                 <i style="color: red" class="bi bi-circle-fill"></i>
                 Record "${title}"</button>

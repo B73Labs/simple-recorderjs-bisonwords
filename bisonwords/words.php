@@ -26,3 +26,4 @@ foreach ($words as &$word) {
                            ->transliterate($word['word']);
     $word['slug'] = $slug;
 }
+unset($word);
