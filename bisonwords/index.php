@@ -108,13 +108,16 @@
                 print <<<HTML
                     <h4 class="mb-0">${title}</h4>
                     <div>
-                    ${pronunciation}
-                    <button class="recordButton btn btn-dark" id="${slug}" style="height:50px; margin-left:20px;">
-                    <i style="color: red" class="bi bi-circle-fill"></i>
-                    Record "${title}"</button>
+                        ${pronunciation}
+                        <button class="recordButton btn btn-dark" id="${slug}" style="height:50px; margin-left:20px;">
+                            <i style="color: red" class="bi bi-circle-fill"></i>
+                            Record "${title}"
+                        </button>
                     </div>
-                    <p><strong>Recordings:</strong></p>
-                    <div id="${slug}List" class="mb-4"></div>
+                    <div>
+                        <strong>Recordings:</strong>
+                        <div id="${slug}List" class="mb-4"></div>
+                    </div>
                     HTML;
             }
             ?>
