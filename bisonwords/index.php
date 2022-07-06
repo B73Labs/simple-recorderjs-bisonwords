@@ -104,39 +104,17 @@
                     </div>
                 </div>
                 <?php
-                $words = [
-                    // Word/Words, Pronunciation, Url
-                    ['Brison'],
-                    ['Hey Brison'],
-                    ['Bison'],
-                    ['Hey Bison'],
-                    ['Buffalo'],
-                    ['Hey Buffalo'],
-                    ['Weather'],
-                    ["What's the weather?"]
-                ];
-                $rules = <<<'RULES'
-        :: Any-Latin;
-        :: NFD;
-        :: [:Nonspacing Mark:] Remove;
-        :: NFC;
-        :: [^-[:^Punctuation:]] Remove;
-        :: Lower();
-        [:^L:] { [-] > ;
-        [-] } [:^L:] > ;
-        [-[:Separator:]]+ > '-';
-    RULES;
-
+                include 'words.php';
                 foreach ($words as $word) {
-                    $slug = \Transliterator::createFromRules($rules)
-                                           ->transliterate($word[0]);
+                    $slug = $words['slug'];
+                    $title = $words['word'];
                     print <<<HTML
                 <div class="row">
-                <h4>${word[0]}</h4>
+                <h4>${title}</h4>
                 <div>
                 <button class="recordButton btn btn-dark" id="${slug}" style="height:50px; margin-left:20px;">
                 <i style="color: red" class="bi bi-circle-fill"></i>
-                Record "${word[0]}"</button>
+                Record "${title}"</button>
                 </div>
                 <p><strong>Recordings:</strong></p>
                 <div id="${slug}List" class="mb-4"></div>
